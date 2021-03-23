@@ -15,9 +15,4 @@ public class DemoApplication {
 	public static void main(String[] args) {
 		applicationContext = SpringApplication.run(DemoApplication.class, args);
 	}
-
-	@StreamListener(Processor.INPUT)
-	public void onEventByString(@Payload ProductChanged productChanged){
-		System.out.println(productChanged.getEventType());
-	}
 }
