@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: delivery
-          image: apexacme/delivery-rediness:latest
+          image: ghcr.io/acmexii/delivery-rediness:latest
           ports:
             - containerPort: 8080
           readinessProbe:
