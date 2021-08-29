@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: jenkins
+  namespace: default
+---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  namespace: default
+  name: deployment-manager
+rules:
+- apiGroups: ["", "extensions", "apps", "autoscaling", "batch"]
+  resources: ["deployments", "services", "replicationcontrollers", "daemonsets", "statefulsets", "horizontalpodautoscalers", "jobs", "cronjobs", "replicasets", "pods"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"] 
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: deployment-manager-binding
+  namespace: default
+subjects:
+- kind: ServiceAccount
+  name: jenkins
+  apiGroup: ""
+roleRef:
+  kind: Role
+  name: deployment-manager
+  apiGroup: ""
