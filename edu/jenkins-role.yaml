@@ -11,7 +11,7 @@ metadata:
   name: deployment-manager
 rules:
 - apiGroups: ["", "extensions", "apps", "autoscaling", "batch"]
-  resources: ["deployments", "services", "replicationcontrollers", "daemonsets", "statefulsets", "horizontalpodautoscalers", "jobs", "cronjobs", "replicasets", "pods"]
+  resources: ["deployments", "services", "replicationcontrollers", "daemonsets", "statefulsets", "horizontalpodautoscalers", "jobs", "cronjobs", "replicasets", "pods", "pods/exec"]
   verbs: ["get", "list", "watch", "create", "update", "patch", "delete"] 
 ---
 kind: RoleBinding
