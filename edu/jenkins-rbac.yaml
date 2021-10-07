@@ -10,21 +10,9 @@ metadata:
   name: jenkins
   namespace: jenkins-ns
 rules:
-- apiGroups: [""]
-  resources: ["pods"]
-  verbs: ["create","delete","get","list","patch","update","watch"]
-- apiGroups: [""]
-  resources: ["pods/exec"]
-  verbs: ["create","delete","get","list","patch","update","watch"]
-- apiGroups: [""]
-  resources: ["pods/log"]
-  verbs: ["get","list","watch"]
-- apiGroups: [""]
-  resources: ["secrets"]
-  verbs: ["get"]
-- apiGroups: [""]
-  resources: ["events"]
-  verbs: ["get", "watch"]
+- apiGroups: ["", "extensions", "apps", "autoscaling", "batch"]  
+  resources: ["deployments", "services", "replicasets", "pods"]
+  verbs: ["get","list","watch","create","update","patch","delete"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
