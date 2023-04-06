@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-b
+  labels:
+    app: order-b
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: order
+  template:
+    metadata:
+      labels:
+        app: order
+        ver: b
+    spec:
+      containers:
+        - name: order
+          image: apexacme/order:v1.5-b
+          ports:
+            - containerPort: 80
