@@ -1,0 +1,17 @@
+apiVersion: "v1"
+kind: "Service"
+metadata: 
+  name: "order"
+  labels: 
+    app: "order"
+  annotations: 
+    msaez.io/x: "390"
+    msaez.io/y: "220"
+spec: 
+  ports: 
+    - 
+      port: 80
+      targetPort: 80
+  selector: 
+    app: "order"
+  type: "ClusterIP"
