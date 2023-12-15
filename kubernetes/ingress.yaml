@@ -1,0 +1,40 @@
+apiVersion: "networking.k8s.io/v1"
+kind: "Ingress"
+metadata: 
+  name: "ingress"
+  annotations: 
+    kubernetes.io/ingress.class: "nginx"
+    msaez.io/x: "357"
+    msaez.io/y: "120"
+    msaez.io/width: "498"
+    msaez.io/height: "48"
+spec: 
+  rules: 
+    - 
+      host: ""
+      http: 
+        paths: 
+          - 
+            path: "/orders"
+            pathType: "Prefix"
+            backend: 
+              service: 
+                name: "order"
+                port: 
+                  number: 8080
+          - 
+            path: "/products"
+            pathType: "Prefix"
+            backend: 
+              service: 
+                name: "product"
+                port: 
+                  number: 8080
+          - 
+            path: "/deliveries"
+            pathType: "Prefix"
+            backend: 
+              service: 
+                name: "delivery"
+                port: 
+                  number: 8080
