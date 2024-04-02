@@ -27,7 +27,7 @@ spec:
   http:
   - match:
     - uri:
-        regex: "^/orders/.*"
+        prefix: "/orders"
     route:
     - destination:
         host: order
