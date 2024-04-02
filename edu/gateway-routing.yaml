@@ -35,8 +35,8 @@ spec:
           number: 8080
     - uri:
         prefix: "/deliveries"
-    route:
-    - destination:
-        host: delivery
-        port:
-          number: 8080          
+  route:
+  - destination:
+      host: delivery
+      port:
+        number: 8080          
