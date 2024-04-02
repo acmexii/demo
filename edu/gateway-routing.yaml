@@ -25,7 +25,8 @@ spec:
   gateways:
   - shop-gateway
   http:
-  - match:
+  - name: order-route
+    match:
     - uri:
         prefix: "/orders"
     route:
@@ -35,6 +36,7 @@ spec:
           number: 8080
     - uri:
         prefix: "/deliveries"
+  - name: delivery-route      
   route:
   - destination:
       host: delivery
