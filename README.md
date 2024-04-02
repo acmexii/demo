@@ -1,6 +1,4 @@
-## Cloud Native Application(CNA) 개발을 위한 로컬 환경설정
-
-"클라우드 네이티브 애플리케이션 개발자 과정"의 실습을 위해서는 Local 머신에 설치되어야 하는 다수의 Software Stack이 있다. 각 스택의 설치여부를 확인하고, 설치되어 있지 않으면 가이드에 따라 구성한다.
+# Do Not Delete this Repository.
 
 ### Required Tools 
 
