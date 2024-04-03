@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: order
-        image: jinyoung/order:canary
+        image: jinyoung/order:stable
         ports:
         - containerPort: 80
   minReadySeconds: 13
