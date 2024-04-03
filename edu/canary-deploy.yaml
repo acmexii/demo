@@ -16,26 +16,23 @@ spec:
       - name: order
         image: jinyoung/order:stable
         ports:
-        - containerPort: 80
+        - containerPort: 8080
   minReadySeconds: 13
   revisionHistoryLimit: 3
   strategy:
     canary: #Indicates that the rollout should use the Canary strategy
-      maxSurge: "25%"
+      maxSurge: "30%"
       maxUnavailable: 0
       steps:
-      - setWeight: 10
-      - pause:
-          duration: 10s # 1 
       - setWeight: 20
       - pause:
-          duration: 10s # 1 hour
-      - setWeight: 30
-      - pause:
-          duration: 10s # 1 hour
+          duration: 10s  
       - setWeight: 40
       - pause:
-          duration: 10s # 1 hour
+          duration: 10s 
+      - setWeight: 60
+      - pause:
+          duration: 10s 
 ---
   apiVersion: "v1"
   kind: "Service"
